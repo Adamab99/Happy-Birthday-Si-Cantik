@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Future Wife ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:black;
+    color:white;
+    overflow:hidden;
+    text-align:center;
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+input{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    width:220px;
+    text-align:center;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    background:white;
+    color:black;
+    cursor:pointer;
+}
+
+.hidden{
+    display:none;
+}
+
+.dots{
+    position:relative;
+    width:100%;
+    height:100vh;
+}
+
+.dot{
+    width:22px;
+    height:22px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
+    cursor:pointer;
+    box-shadow:0 0 20px white;
+}
+
+.message{
+    position:absolute;
+    bottom:80px;
+    width:100%;
+    font-size:20px;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="login">
+    <h1>For My Future Wife ❤️</h1>
+    <p>Enter our secret password</p>
+
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkPassword()">Unlock My Heart</button>
+</div>
+
+<div class="hidden" id="main">
+
+    <div class="dots">
+
+        <div class="dot" style="top:20%; left:20%;" onclick="showMessage('The day everything started ❤️')"></div>
+
+        <div class="dot" style="top:35%; left:70%;" onclick="showMessage('You made my life happier ✨')"></div>
+
+        <div class="dot" style="top:60%; left:30%;" onclick="showMessage('Thank you for staying with me ❤️')"></div>
+
+        <div class="dot" style="top:75%; left:75%;" onclick="showMessage('I can’t wait to marry you 💍')"></div>
+
+        <div class="message" id="message">
+            Tap the glowing dots slowly ❤️
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+    const password = document.getElementById("password").value;
+
+    if(password === "140224"){
+        document.getElementById("login").classList.add("hidden");
+        document.getElementById("main").classList.remove("hidden");
+    }else{
+        alert("Wrong password ❤️");
+    }
+}
+
+function showMessage(text){
+    document.getElementById("message").innerText = text;
+}
+
+</script>
+
+</body>
+</html>
