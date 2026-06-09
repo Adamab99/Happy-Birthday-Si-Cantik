@@ -6,6 +6,7 @@
 <title>For My Fiancee ❤️</title>
 
 <style>
+
 body{
     margin:0;
     font-family:Arial, sans-serif;
@@ -21,24 +22,38 @@ body{
     justify-content:center;
     align-items:center;
     height:100vh;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+h1{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+p{
+    font-size:15px;
 }
 
 input{
-    padding:12px;
+    padding:10px;
     border:none;
     border-radius:10px;
-    width:220px;
+    width:80%;
+    max-width:220px;
     text-align:center;
+    font-size:16px;
 }
 
 button{
     margin-top:15px;
-    padding:12px 25px;
+    padding:10px 20px;
     border:none;
     border-radius:10px;
     background:white;
     color:black;
     cursor:pointer;
+    font-size:15px;
 }
 
 .hidden{
@@ -52,22 +67,42 @@ button{
 }
 
 .dot{
-    width:22px;
-    height:22px;
+    width:26px;
+    height:26px;
     background:white;
     border-radius:50%;
     position:absolute;
     cursor:pointer;
-    box-shadow:0 0 20px white;
+    box-shadow:0 0 15px white;
 }
 
 .message{
     position:absolute;
-    bottom:80px;
-    width:100%;
-    font-size:20px;
-    padding:20px;
+    bottom:60px;
+    width:90%;
+    left:5%;
+    font-size:18px;
+    line-height:1.5;
 }
+
+@media(max-width:600px){
+
+    h1{
+        font-size:24px;
+    }
+
+    .message{
+        font-size:16px;
+        bottom:40px;
+    }
+
+    .dot{
+        width:22px;
+        height:22px;
+    }
+
+}
+
 </style>
 </head>
 
