@@ -116,6 +116,21 @@ button{
     stroke-width:2;
     opacity:0.4;
 }
+  @keyframes glow {
+    0% { box-shadow: 0 0 10px white; }
+    50% { box-shadow: 0 0 25px white; }
+    100% { box-shadow: 0 0 10px white; }
+}
+
+.dot{
+    width:26px;
+    height:26px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
+    cursor:pointer;
+    animation: glow 2s infinite;
+}
     
 </style>
 </head>
@@ -123,11 +138,11 @@ button{
 <body>
 
 <div class="container" id="login">
-    <h1>For My Fiancee ❤️</h1>
+    <h1>Happy Birthday Tunangku ❤️</h1>
     <p>Hint:Your Birthday</p>
 
     <input type="password" id="password" placeholder="Password">
-    <button onclick="checkPassword()">Unlock My Heart</button>
+    <button onclick="checkPassword()">Buka</button>
 </div>
 
 <div class="hidden" id="main">
@@ -139,6 +154,7 @@ button{
 <line x1="20%" y1="20%" x2="70%" y2="35%" />
 <line x1="70%" y1="35%" x2="30%" y2="60%" />
 <line x1="30%" y1="60%" x2="65%" y2="68%" />
+<line x1="65%" y1="68%" x2="75%" y2="75%" />
 
 </svg>
 
