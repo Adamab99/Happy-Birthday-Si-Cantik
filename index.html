@@ -7,6 +7,33 @@
 
 <style>
 
+    <div id="doorContainer">
+
+    <div id="leftDoor"></div>
+    <div id="rightDoor"></div>
+
+</div>
+
+    <div id="doorContainer">
+
+    <div id="leftDoor"></div>
+    <div id="rightDoor"></div>
+
+</div>
+
+    function openDoor(){
+
+    document.getElementById("doorContainer")
+        .classList.add("open");
+
+    setTimeout(() => {
+
+        window.location.href = "birthday.html";
+
+    }, 2000);
+
+}
+    
 body{
     margin:0;
     font-family:Arial, sans-serif;
