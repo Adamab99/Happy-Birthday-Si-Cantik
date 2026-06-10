@@ -1,49 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="ms">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Untuk Tunangku ❤️</title>
+
+<title>Happy Birthday Tunangku ❤️</title>
 
 <style>
 
-    <div id="doorContainer">
-
-    <div id="leftDoor"></div>
-    <div id="rightDoor"></div>
-
-</div>
-
-    <div id="doorContainer">
-
-    <div id="leftDoor"></div>
-    <div id="rightDoor"></div>
-
-</div>
-
-    function openDoor(){
-
-    document.getElementById("doorContainer")
-        .classList.add("open");
-
-    setTimeout(() => {
-
-        window.location.href = "birthday.html";
-
-    }, 2000);
-
-}
-    
 body{
     margin:0;
-    font-family:Arial, sans-serif;
-    background-image:url('flowers.jpg.jpg');
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    font-family:Arial,sans-serif;
+    background:url('flowers.jpg.jpg') center center/cover no-repeat;
     color:white;
-    overflow:hidden;
     text-align:center;
+    overflow:hidden;
 }
 
 .container{
@@ -52,154 +24,125 @@ body{
     justify-content:center;
     align-items:center;
     height:100vh;
-    padding:20px;
-    box-sizing:border-box;
-}
-
-h1{
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-p{
-    font-size:15px;
-}
-
-input{
-    padding:10px;
-    border:none;
-    border-radius:10px;
-    width:80%;
-    max-width:220px;
-    text-align:center;
-    font-size:16px;
-}
-
-button{
-    margin-top:15px;
-    padding:10px 20px;
-    border:none;
-    border-radius:10px;
-    background:white;
-    color:black;
-    cursor:pointer;
-    font-size:15px;
 }
 
 .hidden{
     display:none;
 }
 
-.dots{
-    position:relative;
-    width:100%;
-    height:100vh;
+input{
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    text-align:center;
 }
 
-.dot{
-    position:absolute;
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
     cursor:pointer;
-    font-size:35px;
-    transform:translate(-50%,-50%);
+    margin-top:15px;
+}
+
+.heartPage{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.bigHeart{
+    font-size:100px;
+    cursor:pointer;
     animation:heartbeat 1.5s infinite;
 }
 
-.dot::before{
-    content:"❤️";
+.text{
+    margin-top:20px;
+    font-size:22px;
+    max-width:80%;
 }
 
 @keyframes heartbeat{
-    0%{transform:translate(-50%,-50%) scale(1);}
-    50%{transform:translate(-50%,-50%) scale(1.2);}
-    100%{transform:translate(-50%,-50%) scale(1);}
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
 }
-    
-.message{
+
+#doorContainer{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:999;
+}
+
+#leftDoor,
+#rightDoor{
     position:absolute;
-    bottom:60px;
-    width:90%;
-    left:5%;
-    font-size:18px;
-    line-height:1.5;
+    top:0;
+    width:50%;
+    height:100%;
+    background:#5c4033;
+    transition:2s;
 }
 
-@media(max-width:600px){
-
-    h1{
-        font-size:24px;
-    }
-
-    .message{
-        font-size:16px;
-        bottom:40px;
-    }
-
-    .dot{
-    font-size:28px;
-}
-    
-
+#leftDoor{
+    left:-50%;
 }
 
-    .lines{
-    display:none;
+#rightDoor{
+    right:-50%;
 }
 
-  @keyframes glow {
-    0% { box-shadow: 0 0 10px white; }
-    50% { box-shadow: 0 0 25px white; }
-    100% { box-shadow: 0 0 10px white; }
+.open #leftDoor{
+    transform:translateX(-100%);
 }
 
-.dot{
-    width:26px;
-    height:26px;
-    background:white;
-    border-radius:50%;
-    position:absolute;
-    cursor:pointer;
-    animation: glow 2s infinite;
+.open #rightDoor{
+    transform:translateX(100%);
 }
-    
+
 </style>
+
 </head>
 
 <body>
 
 <div class="container" id="login">
-    <h1>Happy Birthday Tunangku ❤️</h1>
-    <p>Hint:Tarikh Birthday Kamu</p>
 
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="checkPassword()">Buka</button>
+<h1>Happy Birthday Tunangku ❤️</h1>
+
+<p>Hint: Tarikh Birthday Kamu</p>
+
+<input type="password" id="password">
+
+<button onclick="checkPassword()">
+Buka
+</button>
+
 </div>
 
-<div class="hidden" id="main">
+<div class="heartPage hidden" id="main">
 
-    <div class="dots">
+<div class="bigHeart" onclick="openDoor()">
+❤️
+</div>
 
-<svg class="lines">
+<div class="text">
+Bukalah Pintu Hati Saya dan Bacalah Dengan Perlahan 🌸
+</div>
 
-<line x1="20%" y1="20%" x2="70%" y2="35%" />
-<line x1="70%" y1="35%" x2="30%" y2="60%" />
-<line x1="30%" y1="60%" x2="65%" y2="68%" />
-<line x1="65%" y1="68%" x2="75%" y2="75%" />
+</div>
 
-</svg>
+<div id="doorContainer">
 
-        <div class="dot" style="top:20%; left:20%;" onclick="showMessage('Terima kasih sebab hadir dalam hidupku ❤️')"></div>
-
-        <div class="dot" style="top:35%; left:70%;" onclick="showMessage('Terima kasih sebab terima ku seadanya ✨')"></div>
-
-        <div class="dot" style="top:60%; left:30%;" onclick="showMessage('Terima kasih sebab kekal bertahan selama ini dengan ku ❤️')"></div>
-
-        <div class="dot" style="top:75%; left:75%;" onclick="showMessage('Semoga masjid yang bakal kita bina ini dipermudahkan segalanya 💍')"></div>
-
-        <div class="message" id="message">
-            Tekan dot tu satu satu dan baca tau 🌸❤️
-        </div>
-
-    </div>
+<div id="leftDoor"></div>
+<div id="rightDoor"></div>
 
 </div>
 
@@ -207,21 +150,40 @@ button{
 
 function checkPassword(){
 
-    const password = document.getElementById("password").value;
+    const password =
+    document.getElementById("password").value;
 
-    if(password === "020611"){
-        document.getElementById("login").classList.add("hidden");
-        document.getElementById("main").classList.remove("hidden");
+    if(password==="020611"){
+
+        document.getElementById("login")
+        .classList.add("hidden");
+
+        document.getElementById("main")
+        .classList.remove("hidden");
+
     }else{
-        alert("Wrong password ❤️");
+
+        alert("Password Salah ❤️");
+
     }
+
 }
 
-function showMessage(text){
-    document.getElementById("message").innerText = text;
+function openDoor(){
+
+    document.getElementById("doorContainer")
+    .classList.add("open");
+
+    setTimeout(function(){
+
+        window.location.href="birthday.html";
+
+    },2000);
+
 }
 
 </script>
 
 </body>
 </html>
+
